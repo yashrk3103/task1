@@ -34,6 +34,33 @@ These results indicate that:
 
 ---
 
+## 🔧 Common Services on Open Ports
+
+| Port | Service    | Description                                |
+| ---- | ---------- | ------------------------------------------ |
+| 53   | DNS        | Domain Name System - resolves domain names |
+| 80   | HTTP       | Web service - hosts websites               |
+| 443  | HTTPS      | Secure web service (encrypted HTTP)        |
+| 7070 | RealServer | Used by RealAudio streaming protocols      |
+
+These are well-known ports and can expose essential services to users — or to potential attackers if left unsecured.
+
+---
+
+## ⚠️ Security Risks Identified
+
+* **Port 80 and 443**: If the web service is outdated or misconfigured, it could be exploited through vulnerabilities (e.g., XSS, SQLi).
+* **Port 53**: Open DNS can be abused for amplification attacks or data exfiltration.
+* **Port 7070**: This less-common port may be overlooked, but streaming services can have unpatched flaws or weak auth.
+
+To minimize risk:
+
+* Disable unnecessary ports/services.
+* Use firewalls to restrict traffic.
+* Ensure all services are updated and monitored.
+
+---
+
 ## 📷 Screenshots / Command Outputs
 
 Scan command used:
@@ -102,8 +129,4 @@ PORT     STATE SERVICE
 **8. How does Wireshark complement port scanning?**
 
 > Wireshark captures and displays raw network packets in real-time. It helps visualize Nmap activity, verify packet responses, analyze unexpected behavior, and detect anomalies or scanning attempts.
-
----
-
-✅ Task completed and submitted as required.
 
